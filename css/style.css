@@ -24,37 +24,36 @@
 }
 
 .target{
-  width: 60%;
+  width: 90%;
   background-color: rgba(255,255,255,.4);
   border-radius: 20px;
   display: flex;
   align-items:stretch;
-  overflow: hidden;
-  
+  /* overflow: hidden; */
+  flex-direction: column;
 }
 
 .image-target{
-  flex:2;
   display: block;
 }
 
 .image-target img{
+  height: 10rem;
   width: 100%;
-  object-position: -10rem center;
+  object-position: center;
   object-fit: cover;
   display: block;
-  height: 100%;
 
 }
 
 .form-target{ 
-  flex: 3;
-  padding: 2rem;
+  padding: .5rem;
+  font-size: 1rem;
   background-color: white;
 }
 
 .form-title{
-  padding-bottom: 2rem;
+  padding-bottom: .5rem;
   text-align: center;
 }
 .field-form{
@@ -62,6 +61,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 label{
@@ -76,13 +76,148 @@ input, select{
 input[type=text],input[type=password]{
   width: 100%;
   padding: 6px 10px;
-  margin: 8px 0;
+  margin: 2px 0;
   display: inline-block;
   border: 1px solid #888;
   border-radius: 4px;
   box-sizing: border-box;
 }
 input[type=email], input[type=number]{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #888;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+ select, option {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #888;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit],button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 8px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: large;
+  text-transform: uppercase;
+}
+
+input[type=submit]:hover ,button:hover {
+  background-color: slategray;
+}
+
+
+ input[type="file"] {
+  opacity: 1;
+  width: 100%;
+  height: 32px;
+  display: inline-block;
+}
+
+
+.file-select {
+  position: relative;
+  display: inline-block;
+}
+
+.file-select::before {
+  background-color: #5678EF;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  content: 'Selecciona una foto'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.vtarget{
+  width: 80%;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items:stretch;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 2rem 4rem;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .target{
+    width: 70%;
+  }
+
+  .image-target img{
+    width: 100%;
+    height: 15rem;
+    object-position: center;
+    object-fit: cover;
+    display: block;
+  }
+
+
+}
+
+@media only screen and (min-width: 1024px) {
+  .target{
+    flex-direction: row;
+    width: 65%;
+  }
+
+  .image-target{
+    flex:2;
+    display: block;
+  }
+  
+  .image-target img{
+    width: 100%;
+    object-position: -10rem center;
+    object-fit: cover;
+    display: block;
+    height: 100%;
+  
+  }
+  
+  .form-target{ 
+    flex: 3;
+    padding: 1rem 4rem;
+    background-color: white;
+  }
+
+  .form-title{
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+
+  input[type=text],input[type=password]{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #888;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=email], input[type=number], input[type=date]{
   width: 100%;
   padding: 6px 10px;
   margin: 8px 0;
@@ -106,7 +241,7 @@ input[type=submit] {
   width: 100%;
   background-color: black;
   color: white;
-  padding: 14px 20px;
+  padding: 8px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
@@ -146,4 +281,60 @@ input[type=submit]:hover {
   right: 0;
   top: 0;
   bottom: 0;
+}
+
+.vtarget{
+  width: 50%;
+}
+}
+
+.error{
+  border: 1px solid firebrick !important;
+}
+
+.tooltip-container {
+  position: relative; /*relative: los elementos se posicionan de forma relativa a su posición normal.*/
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 10rem;
+  min-height: 1.8rem;
+  background-color: firebrick;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 8px; /* Posiciona el tooltip bajo del elemento */
+  left: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: .8rem;
+}
+.tooltip-container:hover .error {
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 100;
+}
+
+.data-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: .5rem 1rem;
+}
+.text-field{
+  display: inline-block;
+  width: 50%;
+  padding: .5rem;
+  text-align: right;
+  padding: 0 1rem;
+
+}
+.text-data{
+  width: 50%;
+  text-align: left;
+  padding: 0 1rem  ;
 }
