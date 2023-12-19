@@ -1,3 +1,18 @@
+<!--
+  Equipo 3 :  Marco Antonio Romero Rodríguez - David Benjamin Trejo Salazar
+  
+  El proyecto cuenta con tres archivos PHP, un archivo CSS y dos imágenes.
+El primer archivo PHP seria index.html, ya que por su nombre es el archivo principal. 
+casi toda la funcionalidad se encuentra en este archivo, ya que contiene un formulario 
+que tiene como acción el mismo documento para que se haga la validación de los datos, 
+además de recuperar datos ingresados, así como mostrar los mensajes de error que existan, 
+esto se logra utilizando un objeto myreg de la clase Register que se encuentra en otro 
+archivo PHP, en el se generar todas las variables utilizadas para el manejo de error y 
+mensajes, así como las validaciones. Las validaciones que se hicieron fueron, campo vacío, 
+formato de correo, formato de RFC, Formato de CP, Formato de Telefono. Por ultimo si 
+todo el formulario se encuentra correctamente llenado se guarda momentáneamente los datos 
+en variables de sesión y se hace una redirección de pagina en la cual se cargan los datos 
+y se borras las variables de sesión. -->
 
 <!DOCTYPE html>
 <html lang="es">
